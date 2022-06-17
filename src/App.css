@@ -1,14 +1,18 @@
+:root {
+  --color-ligth-green: #369c38;
+  --color-white: #fff;
+}
+
 .App {
   text-align: center;
 }
 
-
 .App-header {
-  background-color: #369c38;
+  background-color: var(--color-ligth-green);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--color-white);
 }

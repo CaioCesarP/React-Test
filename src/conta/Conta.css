@@ -1,7 +1,12 @@
+:root {
+  --color-ligth-green: #3ea03f;
+  --color-ligth-blue: #426fa2;
+}
+
 .Conta-header {
-    color: #3ea03f;
+  color: var(--color-ligth-green);
 }
 
 .Saldo-valor {
-    color: #426fa2;
+  color: var(--color-ligth-green);
 }
