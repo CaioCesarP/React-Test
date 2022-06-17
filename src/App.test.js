@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 
-import App from "./App";
+import App, { calcularNovoSaldo } from "./App";
 
 describe("Component principal: ", () => {
   describe("Quando abro o app do banco...", () => {
@@ -21,6 +21,19 @@ describe("Component principal: ", () => {
       render(<App />);
 
       expect(screen.getByText("Realizar operação")).toBeInTheDocument();
+    });
+  });
+
+  describe("Quando realizo transações...", () => {
+    it("Que é saque, valor vai diminuir", () => {
+      const valores = {
+        transacao: "saque",
+        valor: 50,
+      };
+
+      const novoSaldo = calcularNovoSaldo(valores, 150);
+
+      expect(novoSaldo).toBe(100);
     });
   });
 });
