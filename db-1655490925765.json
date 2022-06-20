@@ -4,16 +4,22 @@
   },
   "transacoes": [
     {
-      "valor": "10",
+      "valor": 10,
       "transacao": "saque",
       "data": "10/08/2020",
       "id": 1
     },
     {
       "transacao": "deposito",
-      "valor": "20",
+      "valor": 20,
       "data": "26/09/2020",
       "id": 2
+    },
+    {
+      "transacao": "Saque",
+      "valor": "100",
+      "data": "20/06/2022",
+      "id": 3
     }
   ]
 }

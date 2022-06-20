@@ -1,6 +1,8 @@
 :root {
   --color-ligth-green: #3ea03f;
   --color-ligth-blue: #426fa2;
+  --color-strong-green: #1e7a1e;
+  --color-strong-blue: #2d4866;
 }
 
 .Conta-header {
@@ -9,4 +11,15 @@
 
 .Saldo-valor {
   color: var(--color-ligth-green);
+}
+
+.Button-operacao {
+  margin: 1rem auto;
+}
+
+.Button-operacao .Button {
+  border-radius: 20px 50px 20px 50px;
+  padding: 0.5rem 0.8rem;
+  font-size: medium;
+  visibility: hidden;
 }

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import './Conta.css'
 
 const Conta = ({ saldo, realizarTransacao }) => {
+    const defaultValores = {transacao: '', valor: 0};
     const [valores, atualizarValores] = useState({transacao: '', valor: 0});
+    const button = document.querySelector(".Button-operacao .Button");
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -15,8 +17,17 @@ const Conta = ({ saldo, realizarTransacao }) => {
     function handleSubmit(e) {
         e.preventDefault();
         const dataTransacao = new Date().toLocaleDateString('pt-br');
-        realizarTransacao({...valores, data: dataTransacao});
+        valores.transacao !== "" &&
+            valores.valor !== 0 &&
+                realizarTransacao({...valores, data: dataTransacao});
+        atualizarValores(defaultValores);
     }
+
+    const showButton = () => {
+        valores.transacao !== "" &&
+            valores.valor !== 0 &&
+                button.style.setProperty("visibility", "visible");;
+    };
 
     return <div className="Conta-header">
         <h2>Conta</h2>
@@ -59,8 +70,9 @@ const Conta = ({ saldo, realizarTransacao }) => {
                 onChange={handleChange}
             ></input>
 
-            <div>
-                <button type='submit'>
+            <div className="Button-operacao">
+                <button className="Button" type='submit'>
+                    {showButton()}
                     Realizar operação
                 </button>
             </div>
