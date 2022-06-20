@@ -38,12 +38,12 @@ describe("Component principal: ", () => {
       });
 
       it("A transação deve ser realizada.", () => {
-        const { getByText, getByTestId, getByLabelText } = render(<App />);
+        render(<App />)
 
-        const saldo = getByText("R$ 1000");
-        const transacao = getByLabelText("Saque");
-        const valor = getByTestId("valor");
-        const botaoTransacao = getByText("Realizar operação");
+        const saldo = screen.getByText("R$ 1000");
+        const transacao = screen.getByLabelText("Saque");
+        const valor = screen.getByTestId("valor");
+        const botaoTransacao = screen.getByText("Realizar operação");
 
         //garantir que o saldo corresponde ao default(R$ 1000)
         expect(saldo.textContent).toBe("R$ 1000");
